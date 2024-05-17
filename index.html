@@ -45,6 +45,65 @@
         <h1>Order Tracker</h1>
         <button onclick="addOrder('accepted')">Accept</button>
         <button onclick="addOrder('declined')">Decline</button>
+        <button onclick="eraseLastOrder()">Erase</button> <!-- New "erase" button -->
+        <div class="stats">
+            <p>Accepted: <span id="acceptedCount">0</span></p>
+            <p>Declined: <span id="declinedCount">0</span></p>
+            <p>Acceptance Rate: <span id="acceptanceRate">0.00%</span></p>
+        </div>
+        <div class="squares-container" id="squaresContainer">
+            <!-- Squares will be added here dynamically -->
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracker</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+        }
+        .container { 
+            max-width: 400px; 
+            margin: 0 auto; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        button { 
+            padding: 10px 20px; 
+            margin: 5px; 
+            background-color: #1e1e1e; /* Dark button background */
+            color: #e0e0e0; /* Light button text */
+            border: 1px solid #444; /* Dark border */
+        }
+        .stats { margin-top: 20px; }
+        .squares-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-top: 20px; 
+        }
+        .square { 
+            width: 20px; 
+            height: 20px; 
+            margin: 2px; 
+            background-color: #333; /* Dark square background */
+        }
+        .accepted { background-color: green; }
+        .declined { background-color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Tracker</h1>
+        <button onclick="addOrder('accepted')">Accept</button>
+        <button onclick="addOrder('declined')">Decline</button>
         <div class="stats">
             <p>Accepted: <span id="acceptedCount">0</span></p>
             <p>Declined: <span id="declinedCount">0</span></p>
